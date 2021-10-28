@@ -17,6 +17,55 @@ console.log(
   CheckMatrix([
     [1, 0, 0],
     [0, 1, 0],
+    [0, 0, 1],
+  ])
+);
+console.log(
+  CheckMatrix([
+    [1, 0, 1],
+    [0, 1, 0],
     [1, 0, 1],
   ])
 );
+
+// [
+//   [1, 1, 1],
+//   [1, 1, 1],
+//   [1, 1, 1],
+// ],
+//   [
+//     [1, 1, 1],
+//     [0, 0, 0],
+//     [1, 1, 1],
+//   ];
+// 1 -> 1 = 1
+// 0 -> 0 = 1
+// 1 -> 0 = 0
+// 0 -> 1 = 0
+
+function CompaireMatrices(m1, m2) {
+  var result = [];
+  for (var i = 0; i < m1.length; i++) {
+    result[i] = [];
+    for (var j = 0; j < m1.length; j++) {
+      if (m1[i][j] === m2[m1.length - 1 - i][m1.length - 1 - j]) {
+        result[i][j] = 1;
+      } else {
+        result[i][j] = 0;
+      }
+    }
+  }
+  return result;
+}
+var m1 = [
+  [1, 1, 1],
+  [1, 1, 1],
+  [1, 1, 1],
+];
+var m2 = [
+  [1, 1, 0],
+  [1, 0, 1],
+  [0, 1, 1],
+];
+
+console.log(CompaireMatrices(m1, m2));

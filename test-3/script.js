@@ -44,6 +44,7 @@ console.log(queue.displayData(), "Display Data");
 
 const btnInsert = document.querySelector(".insert");
 
+
 btnInsert.addEventListener("click", function (e) {
   const insertBox = document.querySelector(".insertBox").value;
   queue.addData(insertBox);
